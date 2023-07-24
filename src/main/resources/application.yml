@@ -1,0 +1,50 @@
+server:
+  port: 8086
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/
+
+        - id: RESTAURANT-SERVICE
+          uri: lb://RESTAURANT-SERVICE
+          predicates:
+            - Path=/restaurant/
+
+        - id: SHOP-SERVICE
+          uri: lb://SHOP-SERVICE
+          predicates:
+            - Path=/shop/
+
+        - id: AUTO-SERVICE
+          uri: lb://AUTO-SERVICE
+          predicates:
+            - Path=/auto/
+
+        - id: HOSPITAL-SERVICE
+          uri: lb://HOSPITAL-SERVICE
+          predicates:
+            - Path=/hospital/
+
+        - id: HOTEL-SERVICE
+          uri: lb://HOTEL-SERVICE
+          predicates:
+            - Path=/hotel/
+        - id: NOTIFICATION-SERVICE
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notification/
+
+eureka:
+  client:
+    service-url:
+      defaultUrl: ${EUREKA_URI:http://localhost:8761/eureka/}
+  instance:
+    prefer-ip-address: true
