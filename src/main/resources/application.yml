@@ -11,36 +11,36 @@ spring:
         - id: USER-SERVICE
           uri: lb://USER-SERVICE
           predicates:
-            - Path=/user/
+            - Path=/user/**
 
         - id: RESTAURANT-SERVICE
           uri: lb://RESTAURANT-SERVICE
           predicates:
-            - Path=/restaurant/
+            - Path=/restaurant/**
 
         - id: SHOP-SERVICE
           uri: lb://SHOP-SERVICE
           predicates:
-            - Path=/shop/
+            - Path=/shop/**
 
         - id: AUTO-SERVICE
           uri: lb://AUTO-SERVICE
           predicates:
-            - Path=/auto/
+            - Path=/auto/**
 
         - id: HOSPITAL-SERVICE
           uri: lb://HOSPITAL-SERVICE
           predicates:
-            - Path=/hospital/
+            - Path=/hospital/**
 
         - id: HOTEL-SERVICE
           uri: lb://HOTEL-SERVICE
           predicates:
-            - Path=/hotel/
+            - Path=/hotel/**
         - id: NOTIFICATION-SERVICE
           uri: lb://NOTIFICATION-SERVICE
           predicates:
-            - Path=/notification/
+            - Path=/notification/**
 
 eureka:
   client:
