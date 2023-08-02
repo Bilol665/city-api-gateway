@@ -23,10 +23,10 @@ spring:
           predicates:
             - Path=/shop/**
 
-        - id: AUTO-SERVICE
-          uri: lb://AUTO-SERVICE
+        - id: APARTMENT-SERVICE
+          uri: lb://APARTMENT-SERVICE
           predicates:
-            - Path=/auto/**
+            - Path=/apartment/**
 
         - id: HOSPITAL-SERVICE
           uri: lb://HOSPITAL-SERVICE
