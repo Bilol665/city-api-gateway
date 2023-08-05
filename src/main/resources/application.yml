@@ -1,5 +1,5 @@
 server:
-  port: 8086
+  port: 8080
 spring:
   main:
     web-application-type: reactive
@@ -37,10 +37,21 @@ spring:
           uri: lb://HOTEL-SERVICE
           predicates:
             - Path=/hotel/**
+
         - id: NOTIFICATION-SERVICE
           uri: lb://NOTIFICATION-SERVICE
           predicates:
             - Path=/notification/**
+
+        - id: PAYMENT-SERVICE
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/**
+
+        - id: BOOKING-SERVICE
+          uri: lb://BOOKING-SERVICE
+          predicates:
+            - Path=/booking/**
 
 eureka:
   client:
