@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8079
 spring:
   main:
     web-application-type: reactive
@@ -18,10 +18,10 @@ spring:
           predicates:
             - Path=/restaurant/**
 
-        - id: SHOP-SERVICE
-          uri: lb://SHOP-SERVICE
+        - id: POST-SERVICE
+          uri: lb://POST-SERVICE
           predicates:
-            - Path=/shop/**
+            - Path=/post/**
 
         - id: APARTMENT-SERVICE
           uri: lb://APARTMENT-SERVICE
